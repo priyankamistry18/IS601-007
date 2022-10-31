@@ -1,11 +1,11 @@
 import pytest
-
+from IceceamExceptions import (ExceededRemainingChoicesException,
+                               OutOfStockException)
 # make sure the first word matches your package/folder name
-from IcecreamMachine import IceCreamMachine
-from IcecreamMachine import STAGE
+from IcecreamMachine import STAGE, IceCreamMachine
+
 #this is an example test showing how to cascade fixtures to build up state
 
-from IcecreamExceptions import ExceededRemainingChoicesException, OutOfStockException
 
 @pytest.fixture
 def machine():
@@ -35,12 +35,12 @@ def second_order(first_order, machine):
 def test_production_line(second_order):
     assert second_order is not None
 
-# UCID: sp2927
+# UCID: pm582
 # Date: 21 Oct 2022
 def test_first_selection(machine):
     assert machine.currently_selecting.name == STAGE.Container.name
 
-# UCID: sp2927
+# UCID: pm582
 # Date: 21 Oct 2022
 def test_flavour_in_stock(machine):
     # setting available quantity to 1 for testing convenience
@@ -53,7 +53,7 @@ def test_flavour_in_stock(machine):
     except OutOfStockException:
         assert False
 
-# UCID: sp2927
+# UCID: pm582
 # Date: 21 Oct 2022
 def test_toppings_in_stock(machine):
     # setting available quantity to 1 for testing convenience
@@ -67,8 +67,8 @@ def test_toppings_in_stock(machine):
     except OutOfStockException:
         assert False
 
-# UCID: sp2927
-# Date: 21 Oct 2022
+# UCID: pm582
+# Date: 27 Oct 2022
 def test_max_scoops(machine):
     machine.handle_container("cup")
     # loop to choose (maximum - 1) number of scoops
@@ -80,8 +80,8 @@ def test_max_scoops(machine):
     except ExceededRemainingChoicesException:
         assert False
 
-# UCID: sp2927
-# Date: 21 Oct 2022
+# UCID: pm582
+# Date: 27 Oct 2022
 def test_max_toppings(machine):
     machine.handle_container("cup")
     machine.handle_flavor("next")
@@ -94,8 +94,8 @@ def test_max_toppings(machine):
     except ExceededRemainingChoicesException:
         assert False
 
-# UCID: sp2927
-# Date: 21 Oct 2022
+# UCID: pm582
+# Date: 27 Oct 2022
 def test_total_cost(machine1):
     machine1.reset()
     machine1.handle_container("cup")
@@ -109,8 +109,8 @@ def test_total_cost(machine1):
     machine1.handle_toppings("done")
     assert machine1.calculate_cost() == '4.75'
 
-# UCID: sp2927
-# Date: 21 Oct 2022
+# UCID: pm582
+# Date: 27 Oct 2022
 def test_total_sales(machine1):
     machine1.handle_container("cup")
     machine1.handle_flavor("vanilla")
@@ -132,8 +132,8 @@ def test_total_sales(machine1):
 
     assert machine1.total_sales == iceCreamCost1 + iceCreamCost2
 
-# UCID: sp2927
-# Date: 21 Oct 2022
+# UCID: pm582
+# Date: 27 Oct 2022
 def test_total_icecreams(second_order, machine1):
     machine1.handle_container("cup")
     machine1.handle_flavor("Chocolate")
