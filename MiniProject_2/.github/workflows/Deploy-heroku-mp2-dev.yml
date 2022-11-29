@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - dev
+      - main
       - MiniProject-2
 
 # Your workflows jobs.
