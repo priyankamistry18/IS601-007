@@ -6,6 +6,8 @@ employee = Blueprint('employee', __name__, url_prefix='/employee')
 @employee.route("/search", methods=["GET"])
 def search():
     rows = []
+    #ucid pm582 
+    #date 11/29/22
     # DO NOT DELETE PROVIDED COMMENTS
     # TODO search-1 retrieve employee id as id, first_name, last_name, email, company_id, company_name using a LEFT JOIN
     query = "SELECT employees.id as id, first_name, last_name, email, companies.id as company_id, COALESCE(companies.name, 'N/A' ) as company_name FROM IS601_MP2_Employees employees LEFT JOIN IS601_MP2_Companies companies ON employees.company_id=companies.id"
