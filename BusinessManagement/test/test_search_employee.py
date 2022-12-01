@@ -3,8 +3,8 @@ import pytest
 
 @pytest.fixture()
 def app():
-    from main import create_app
-    from sql.db import DB
+    from ..main import create_app
+    from ..sql.db import DB
     app = create_app()
     """app.config.update({
         "TESTING": True,
