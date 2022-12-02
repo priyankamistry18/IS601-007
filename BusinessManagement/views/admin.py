@@ -17,8 +17,9 @@ def importCSV():
         if file.filename == '':
             flash('No selected file', "warning")
             return redirect(request.url)
-        # ucid = pm582 date=11.30.22
+
         # TODO importcsv-1 check that it's a .csv file, return a proper flash message if it's not
+        # pm582 - 11/27/2022
         if file.filename.lower().endswith(('.csv')) == False:
             # Code should check if the file is a .csv file otherwise reject with a flash
             flash('Selected file is not a .csv', "warning")
@@ -39,8 +40,8 @@ def importCSV():
             """
             # Note: this reads the file as a stream instead of requiring us to save it
             stream = io.TextIOWrapper(file.stream._file, "UTF8", newline=None)
-            # ucid = pm582 date=11.30.22
             # TODO importcsv-2 read the csv file stream as a dict
+            # pm582 - 11/27/2022
             reader = csv.DictReader(stream)
             for row in reader:
                 # print(row) #example
@@ -54,21 +55,25 @@ def importCSV():
                     "zip": row['zip'],
                     "website": row['web'],
                 }
-                companies.append(company)
+                if row["company_name"]  != '' and row["address"]  != '' and row["city"]  != '' and row["state"]  != '' and row["country"]  != '':
+                    companies.append(company)
                 # TODO importcsv-4 extract employee data and append to employee list as a dict only with employee data
+                # pm582 - 11/27/2022
                 employee = {
                     "first_name": row['first_name'],
                     "last_name": row['last_name'],
                     "email": row['email'],
                     "company_name": row['company_name'],
                 }
-                employees.append(employee)
+                if row["first_name"] != '' and row["last_name"] != '' and row["email"] != '':
+                    employees.append(employee)
                
             if len(companies) > 0:
                 print(f"Inserting or updating {len(companies)} companies")
                 try:
                     result = DB.insertMany(company_query, companies)
                     # TODO importcsv-5 display flash message about number of companies inserted
+                    # pm582 - 11/27/2022
                     if result.status == True:
                         companies_count_query = """SELECT COUNT(id) FROM `IS601_MP2_Companies`"""
                         flash(f"Inserted or updated {len(companies)} companies", "success")
@@ -77,12 +82,14 @@ def importCSV():
                     flash("There was an error loading in the csv data", "danger")
             else:
                 # TODO importcsv-6 display flash message (info) that no companies were loaded
+                # pm582 - 11/27/2022
                 flash("No companies were loaded", "info")
             if len(employees) > 0:
                 print(f"Inserting or updating {len(employees)} employees")
                 try:
                     result = DB.insertMany(employee_query, employees)
                     # TODO importcsv-7 display flash message about number of employees loaded
+                    # pm582 - 11/27/2022
                     if result.status == True:
                         employees_count_query = """SELECT COUNT(id) FROM `IS601_MP2_Employees`"""
                         flash(f"Inserted or updated {len(employees)} employees", "success")
@@ -91,5 +98,6 @@ def importCSV():
                     flash("There was an error loading in the csv data", "danger")
             else:
                  # TODO importcsv-8 display flash message (info) that no companies were loaded
+                 # pm582 - 11/27/2022
                 flash("No employees were loaded", "info")
     return render_template("upload.html")
