@@ -3,8 +3,8 @@ import pytest
 
 @pytest.fixture()
 def app():
-    from main import create_app
-    from sql.db import DB
+    from ..main import create_app
+    from ..sql.db import DB
     app = create_app()
     """app.config.update({
         "TESTING": True,
@@ -48,7 +48,7 @@ def test_upload_csv(client):
             employees.append(row["first_name"] + row["last_name"])
     company_count = len(companies)
     employee_count = len(employees)
-    from sql.db import DB
+    from ..sql.db import DB
     format_strings = ','.join(['%s'] * company_count)
     result = DB.selectOne("SELECT count(1) as c FROM IS601_MP2_Companies WHERE name in (%s)" % format_strings, *tuple(companies))
     print(result.row)

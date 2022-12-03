@@ -3,8 +3,8 @@ import pytest
 
 @pytest.fixture()
 def app():
-    from main import create_app
-    from sql.db import DB
+    from ..main import create_app
+    from ..sql.db import DB
     app = create_app()
     """app.config.update({
         "TESTING": True,
@@ -42,7 +42,7 @@ def get_cell_content_by_index(index, table):
     return cell.string.strip()
 
 def query_and_get_assert(query, args, target, client, url):
-    from sql.db import DB
+    from ..sql.db import DB
     result = DB.selectAll(query, *args)
     if result.status and result.rows:
         n = result.rows[0][target]
