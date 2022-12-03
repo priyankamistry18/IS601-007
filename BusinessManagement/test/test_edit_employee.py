@@ -37,7 +37,6 @@ def runner(app):
 def test_edit_employee(client):
     resp = client.post("/employee/edit?id=-1", data={
         "last_name": "_test2",
-        "last_name": "test2",
         "company": -1
     }, follow_redirects=True )
     assert resp.status_code == 200

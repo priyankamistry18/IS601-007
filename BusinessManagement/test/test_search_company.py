@@ -42,7 +42,7 @@ def get_cell_content_by_index(index, table):
     return cell.string.strip()
 
 def query_and_get_assert(query, args, target, client, url):
-    from sql.db import DB
+    from ..sql.db import DB
     result = DB.selectAll(query, *args)
     if result.status and result.rows:
         n = result.rows[0][target]
@@ -155,7 +155,7 @@ def test_employee_count(client):
     query = """SELECT name,
     (SELECT count(1) FROM IS601_MP2_Employees e where e.company_id = IS601_MP2_Companies.id) as employees 
     FROM IS601_MP2_Companies ORDER BY RAND() LIMIT 1"""
-    from sql.db import DB
+    from ..sql.db import DB
     result = DB.selectOne(query, *args)
     if result.status and result.row:
         name = result.row["name"]
