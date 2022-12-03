@@ -3,8 +3,8 @@ import pytest
 
 @pytest.fixture()
 def app():
-    from ..main import create_app
-    from ..sql.db import DB
+    from main import create_app
+    from sql.db import DB
     app = create_app()
     """app.config.update({
         "TESTING": True,
@@ -43,7 +43,7 @@ def runner(app):
 #https://pypi.org/project/pytest-order/
 @pytest.mark.order("last")
 def test_add_employee(client):
-    from ..sql.db import DB
+    from sql.db import DB
     resp = client.post("/employee/add", data={
         "first_name": "delme",
         "last_name": "delme",
