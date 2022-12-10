@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - dev
-      -  Milestone_1 
+      -  Mileston_1 
 
 # Your workflows jobs.
 jobs:
