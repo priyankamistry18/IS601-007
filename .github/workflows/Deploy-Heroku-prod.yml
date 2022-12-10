@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - prod
-      - DeploymentSetup
+      - Milestone1 
 
 # Your workflows jobs.
 jobs:
