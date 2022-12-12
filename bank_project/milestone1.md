@@ -1,6 +1,6 @@
 <table><tr><td> <em>Assignment: </em> IS601 Milestone1 Deliverable</td></tr>
 <tr><td> <em>Student: </em> Priyanka Mistry (pm582)</td></tr>
-<tr><td> <em>Generated: </em> 12/11/2022 5:14:56 PM</td></tr>
+<tr><td> <em>Generated: </em> 12/11/2022 11:06:32 PM</td></tr>
 <tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IS601-007-F22/is601-milestone1-deliverable/grade/pm582" target="_blank">Grading</a></td></tr></table>
 <table><tr><td> <em>Instructions: </em> <ol><li>Checkout Milestone1 branch</li><li>Create a milestone1.md file in your Project folder</li><li>Git add/commit/push this empty file to Milestone1 (you'll need the link later)</li><li>Ensure your images display correctly in the sample markdown at the bottom</li><ol><li>NOTE: You may want to try to capture as much checklist evidence in your screenshots as possible, you do not need individual screenshots and are recommended to combine things when possible. Also, some screenshots may be reused if applicable.</li></ol><li>Save the submission items</li><li>Copy/paste the markdown from the "Copy markdown to clipboard link" or via the download button</li><li>Paste the code into the milestone1.md file or overwrite the file</li><li>Git add/commit/push the md file to Milestone1</li><li>Double check the images load when viewing the markdown file (points will be lost for invalid/non-loading images)</li><li>Make a pull request from Milestone1 to dev and merge it (resolve any conflicts)<ol><li>Make sure everything looks ok on heroku dev</li></ol></li><li>Make a pull request from dev to prod (resolve any conflicts)<ol><li>Make sure everything looks ok on heroku prod</li></ol></li><li>Submit the direct link from github prod branch to the milestone1.md file (no other links will be accepted and will result in 0)</li></ol></td></tr></table>
 <table><tr><td> <em>Deliverable 1: </em> Feature: User will be able to register a new account </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/f2c037/000000?text=Partial"></td></tr>
@@ -51,7 +51,7 @@
 <tr><td> <em>Sub-Task 3: </em> Add the related pull request(s) for this feature</td></tr>
 <tr><td>Not provided</td></tr>
 <tr><td> <em>Sub-Task 4: </em> Explain briefly how the process/code works</td></tr>
-<tr><td> <em>Response:</em> <p>(missing)</p><br></td></tr>
+<tr><td> <em>Response:</em> <div>1. Explains how the form is handled and behaves</div><div><br></div><div>The login form asks the<br>user for their email address or username and password.&nbsp;</div><div><br></div><div>2. Explains the validation logic<br>(frontend and backend)</div><div><br></div><div>The email or username is required. On submission, the email or<br>username is checked to ensure it exists before proceeding. The passord is encrypted<br>and compared to the one stored in the DB for the user. If<br>the password does not match then the passord entered is invalid.&nbsp;</div><div><br></div><div>3. Explains how<br>the password is handled</div><div><br></div><div>The passord is encrypted and compared to the one stored<br>in the DB for the user. If the password does not match then<br>the passord entered is invalid.</div><div><br></div><div>4. Explains how the DB is utilized</div><div><br></div><div>The DB is<br>used to store the easily retrieve the user record so as to verify<br>the user password and also get the user role.</div><div><br></div><div><br></div><br></td></tr>
 </table></td></tr>
 <table><tr><td> <em>Deliverable 3: </em> Feat: Users will be able to logout </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/f2c037/000000?text=Partial"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Add a screenshot showing the successful logout message</td></tr>
@@ -125,12 +125,29 @@
 </table></td></tr>
 <table><tr><td> <em>Deliverable 8: </em> Feature: User will be able to edit their profile </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/f2c037/000000?text=Partial"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Add screenshots of the User Profile page validation messages and success messages</td></tr>
-<tr><td><table><tr><td>Missing Image</td></tr>
-<tr><td> <em>Caption:</em> (missing)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/206954657-843f7f84-1e46-412f-b84d-db2f64b17824.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Show username validation message<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/206954661-84118517-21b9-423f-8cd1-e4c31fcba8cc.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Show email validation message<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/206954662-42280319-2c96-414d-8974-2c0eb4654c38.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Show password validation message<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/206954664-546cd479-cc5b-450c-8b26-896d0a42ea37.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Show password mismatch message<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/206955329-695dbfa6-9cf4-4dd6-a670-af1b9c1bf43e.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Show email/username already in use message<br></p>
+</td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Add before and after screenshots of the Users table when a user edits their profile</td></tr>
-<tr><td><table><tr><td>Missing Image</td></tr>
-<tr><td> <em>Caption:</em> (missing)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/206955540-335a77eb-ac61-48c1-986e-6ca5178431ad.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>add before Users table when a user edits their profile<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/206954671-d112ed45-6db7-4df2-8312-aca9133f06ae.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>after screenshots of the Users table when a user edits their profile<br></p>
+</td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 3: </em> Add the related pull request(s) for this feature</td></tr>
 <tr><td>Not provided</td></tr>
