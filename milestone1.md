@@ -1,6 +1,6 @@
 <table><tr><td> <em>Assignment: </em> IS601 Milestone1 Deliverable</td></tr>
 <tr><td> <em>Student: </em> Priyanka Mistry (pm582)</td></tr>
-<tr><td> <em>Generated: </em> 12/12/2022 2:08:38 PM</td></tr>
+<tr><td> <em>Generated: </em> 12/16/2022 11:03:07 PM</td></tr>
 <tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IS601-007-F22/is601-milestone1-deliverable/grade/pm582" target="_blank">Grading</a></td></tr></table>
 <table><tr><td> <em>Instructions: </em> <ol><li>Checkout Milestone1 branch</li><li>Create a milestone1.md file in your Project folder</li><li>Git add/commit/push this empty file to Milestone1 (you'll need the link later)</li><li>Ensure your images display correctly in the sample markdown at the bottom</li><ol><li>NOTE: You may want to try to capture as much checklist evidence in your screenshots as possible, you do not need individual screenshots and are recommended to combine things when possible. Also, some screenshots may be reused if applicable.</li></ol><li>Save the submission items</li><li>Copy/paste the markdown from the "Copy markdown to clipboard link" or via the download button</li><li>Paste the code into the milestone1.md file or overwrite the file</li><li>Git add/commit/push the md file to Milestone1</li><li>Double check the images load when viewing the markdown file (points will be lost for invalid/non-loading images)</li><li>Make a pull request from Milestone1 to dev and merge it (resolve any conflicts)<ol><li>Make sure everything looks ok on heroku dev</li></ol></li><li>Make a pull request from dev to prod (resolve any conflicts)<ol><li>Make sure everything looks ok on heroku prod</li></ol></li><li>Submit the direct link from github prod branch to the milestone1.md file (no other links will be accepted and will result in 0)</li></ol></td></tr></table>
 <table><tr><td> <em>Deliverable 1: </em> Feature: User will be able to register a new account </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
@@ -53,7 +53,7 @@
 <tr><td> <em>Sub-Task 4: </em> Explain briefly how the process/code works</td></tr>
 <tr><td> <em>Response:</em> <div>1. Explains how the form is handled and behaves</div><div><br></div><div>The login form asks the<br>user for their email address or username and password.&nbsp;</div><div><br></div><div>2. Explains the validation logic<br>(frontend and backend)</div><div><br></div><div>The email or username is required. On submission, the email or<br>username is checked to ensure it exists before proceeding. The passord is encrypted<br>and compared to the one stored in the DB for the user. If<br>the password does not match then the passord entered is invalid.&nbsp;</div><div><br></div><div>3. Explains how<br>the password is handled</div><div><br></div><div>The passord is encrypted and compared to the one stored<br>in the DB for the user. If the password does not match then<br>the passord entered is invalid.</div><div><br></div><div>4. Explains how the DB is utilized</div><div><br></div><div>The DB is<br>used to store the easily retrieve the user record so as to verify<br>the user password and also get the user role.</div><div><br></div><div><br></div><br></td></tr>
 </table></td></tr>
-<table><tr><td> <em>Deliverable 3: </em> Feat: Users will be able to logout </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/f2c037/000000?text=Partial"></td></tr>
+<table><tr><td> <em>Deliverable 3: </em> Feat: Users will be able to logout </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Add a screenshot showing the successful logout message</td></tr>
 <tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/206928349-c62438c8-4937-49fd-849c-1d0842394edb.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>showing the successful logout message<br></p>
@@ -67,49 +67,67 @@
 <tr><td> <em>Sub-Task 3: </em> Add the related pull request(s) for this feature</td></tr>
 <tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/priyankamistry18/IS601-007/pull/22">https://github.com/priyankamistry18/IS601-007/pull/22</a> </td></tr>
 <tr><td> <em>Sub-Task 4: </em> Explain briefly how the process/code works</td></tr>
-<tr><td> <em>Response:</em> <p>(missing)</p><br></td></tr>
+<tr><td> <em>Response:</em> <div>A user session is initiated once a user logs in and it's user<br>to store information about the user and when the user logged in. When<br>performing an action in the system, information about the user is fetched from<br>the user session. Immediately after logging out, the session is cleared and a<br>user cannot perform actions requiring a user to be authenticated.</div><div><br></div><div><br></div><div><br></div><br></td></tr>
 </table></td></tr>
-<table><tr><td> <em>Deliverable 4: </em> Feature: Basic Security Rules Implemented / Basic Roles Implemented </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/f2c037/000000?text=Partial"></td></tr>
+<table><tr><td> <em>Deliverable 4: </em> Feature: Basic Security Rules Implemented / Basic Roles Implemented </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Add a screenshot showing the logged out user can't access a login-protected page (may be the same as similar request)</td></tr>
-<tr><td><table><tr><td>Missing Image</td></tr>
-<tr><td> <em>Caption:</em> (missing)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/208025222-6f27fd95-56b1-4181-995d-fc8b58d9b73f.jpeg"/></td></tr>
+<tr><td> <em>Caption:</em> <p> showing the logged out user can&#39;t access a login-protected page <br></p>
+</td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Add a screenshot showing a user without an appropriate role can't access the role-protected page</td></tr>
-<tr><td><table><tr><td>Missing Image</td></tr>
-<tr><td> <em>Caption:</em> (missing)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/208025123-be623e0c-8d25-4b8e-a418-854ce38d0e40.jpeg"/></td></tr>
+<tr><td> <em>Caption:</em> <p>showing a user without an appropriate role can&#39;t access the role-protected page<br></p>
+</td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 3: </em> Add a screenshot of the Roles table with valid data</td></tr>
-<tr><td><table><tr><td>Missing Image</td></tr>
-<tr><td> <em>Caption:</em> (missing)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/208024652-251e0451-f6a2-4099-bab0-32f50edbc1b9.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p> Roles table with valid data<br></p>
+</td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 4: </em> Add a screenshot of the UserRoles table with valid data</td></tr>
-<tr><td><table><tr><td>Missing Image</td></tr>
-<tr><td> <em>Caption:</em> (missing)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/208024742-bf114a3d-e537-4300-a068-9d2f5ea2a475.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p> UserRoles table with valid data<br></p>
+</td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 5: </em> Add the related pull request(s) for these features</td></tr>
 <tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/priyankamistry18/IS601-007/pull/22">https://github.com/priyankamistry18/IS601-007/pull/22</a> </td></tr>
 <tr><td> <em>Sub-Task 6: </em> Explain briefly how the process/code works for login-protected pages</td></tr>
-<tr><td> <em>Response:</em> <p>(missing)</p><br></td></tr>
+<tr><td> <em>Response:</em> <div><div>A user session is used to check if a user is logged in<br>or not. If the session does not have a user set, it means<br>a user is not logged in and cannot perform any login-required action.</div><div><br></div><div><br></div><div><br></div></div><br></td></tr>
 <tr><td> <em>Sub-Task 7: </em> Explain briefly how the process/code works for role-protected pages</td></tr>
-<tr><td> <em>Response:</em> <div>A user session is used to check if a user is logged in<br>or not. If the session does not have a user set, it means<br>a user is not logged in and cannot perform any login-required action.</div><div><br></div><div><br></div><div><br></div><br></td></tr>
+<tr><td> <em>Response:</em> <div><br></div><div><br></div><div><br></div><div><br></div><br></td></tr>
 </table></td></tr>
-<table><tr><td> <em>Deliverable 5: </em> Feature: Site should have basic styles/theme applied; everything should be styled </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/f2c037/000000?text=Partial"></td></tr>
+<table><tr><td> <em>Deliverable 5: </em> Feature: Site should have basic styles/theme applied; everything should be styled </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Add screenshots to show examples of your site's styles/theme</td></tr>
-<tr><td><table><tr><td>Missing Image</td></tr>
-<tr><td> <em>Caption:</em> (missing)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/208222224-118de6cc-05ae-4e14-bfd3-901d27626a75.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Navigation should be styled<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/208222223-37b59814-49bd-4810-abb1-36529a74feab.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Forms should be styled<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/208222225-e551a076-9087-4fc7-8924-bfd15bd6222e.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Data output should be in a clean manner (i.e., table, row/cols, list groups,<br>etc) Basically not exactly like dumped plaintext<br></p>
+</td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Add the related pull request(s) for this feature</td></tr>
 <tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/priyankamistry18/IS601-007/pull/22">https://github.com/priyankamistry18/IS601-007/pull/22</a> </td></tr>
 <tr><td> <em>Sub-Task 3: </em> Briefly explain your CSS at a high level</td></tr>
 <tr><td> <em>Response:</em> <p>The general styling of this website is using bootstrap. In addition, css is<br>used to set the color of the nav bar and set the size<br>and spacing of elements. Class attributes are used to assign specific styling to<br>elements. The nav background is set to blue and text color to white.<br>A logo favicon image is also appended to the logo. The form input<br>fields are designed with a border and the corners have a radius.<br></p><br></td></tr>
 </table></td></tr>
-<table><tr><td> <em>Deliverable 6: </em> Feature: Any output messages/errors should be "user friendly" </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/f2c037/000000?text=Partial"></td></tr>
+<table><tr><td> <em>Deliverable 6: </em> Feature: Any output messages/errors should be "user friendly" </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Add screenshots of some examples of errors/messages</td></tr>
-<tr><td><table><tr><td>Missing Image</td></tr>
-<tr><td> <em>Caption:</em> (missing)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/208222468-91603eeb-c0c3-4c3e-83c0-b35155981fbe.jpeg"/></td></tr>
+<tr><td> <em>Caption:</em> <p>examples pf errors/messages <br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/208222469-ee385f51-7610-4fdf-805e-8eda6b2ff394.jpeg"/></td></tr>
+<tr><td> <em>Caption:</em> <p>example oof a successful message <br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/208222470-331ceab3-1a52-4a28-8213-fc85f126fb9b.jpeg"/></td></tr>
+<tr><td> <em>Caption:</em> <p>examples pf errors/messages <br></p>
+</td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Add a related pull request</td></tr>
-<tr><td>Not provided</td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/priyankamistry18/IS601-007/pull/22">https://github.com/priyankamistry18/IS601-007/pull/22</a> </td></tr>
 <tr><td> <em>Sub-Task 3: </em> Briefly explain how you made messages user friendly</td></tr>
 <tr><td> <em>Response:</em> <div>All messages are highlighted with a color associating the type of error. For<br>example, green color is used to show a successful message and red color<br>is used to signify na error. The messages are formatted in a friendly<br>manner in the backend before being sent to the front end. The messages<br>are short and concise for the user to easily understand.</div><div><br></div><br></td></tr>
 </table></td></tr>
@@ -155,9 +173,9 @@
 <tr><td> <em>Sub-Task 4: </em> Explain briefly how the process/code works (edit only)</td></tr>
 <tr><td> <em>Response:</em> <div>The user can update the username and email while the password update is<br>not mandatory. To update the password, you have to fill in all the<br>3 password entries ie. the current password, new password and confirm new password.<br>On submission, the username is checked to ensure it is of the required<br>length and it's not duplicated. The email is also checked to ensure that<br>it's a valid email address and it has not been used before.&nbsp;</div><div>Before the<br>password is updated, the current password is checked to ensure it's the correct<br>password for the current user. If the current password is valid, the new<br>password and confirm new password is verified to ensure they match and are<br>of required length.</div><div><br></div><br></td></tr>
 </table></td></tr>
-<table><tr><td> <em>Deliverable 9: </em> Misc </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/f2c037/000000?text=Partial"></td></tr>
+<table><tr><td> <em>Deliverable 9: </em> Misc </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Describe any issues and learnings throughout this milestone</td></tr>
-<tr><td> <em>Response:</em> <p>(missing)</p><br></td></tr>
+<tr><td> <em>Response:</em> <p>while doing this mileston I had few errors first error has was that<br>i was not able init_db because I forgot put my .env files. second<br>error was that i was not able to building heroku due to some<br>issues with test case files&nbsp;<br></p><br></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Prod Application Link to Login Page</td></tr>
 <tr><td> <a rel="noreferrer noopener" target="_blank" href="https://is601-project-prod3.herokuapp.com/login">https://is601-project-prod3.herokuapp.com/login</a> </td></tr>
 </table></td></tr>
