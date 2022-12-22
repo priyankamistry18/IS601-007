@@ -7,7 +7,8 @@ on:
   push:
     branches:
       - dev
-      - DeploymentSetup
+      -  Mileston_1
+      - Milestone_2_3
 
 # Your workflows jobs.
 jobs:
@@ -17,7 +18,7 @@ jobs:
       DB_URL: ${{secrets.DB_URL}}
       PORT: 8080
       # change to the project directory you're deploying
-      WORKING_DIRECTORY: flask_sample
+      WORKING_DIRECTORY: bank_project
     defaults:
       run:
           working-directory: ${{env.WORKING_DIRECTORY}}
@@ -46,7 +47,7 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           
           # Name of the heroku application to which the build is to be sent.
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME_DEV }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME_DEV3 }}
 
           # (Optional, default: "./")
           # Dockerfile directory.
