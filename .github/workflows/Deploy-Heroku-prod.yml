@@ -8,6 +8,7 @@ on:
     branches:
       - prod
       - Mileston_1 
+      - Milestone_2_3
 
 # Your workflows jobs.
 jobs:
