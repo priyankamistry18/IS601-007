@@ -6,6 +6,8 @@
     <div class="h3">Profile</div>
     <form method="POST">
         {{ form.hidden_tag() }}
+        {{render_field(form.first_name)}}
+        {{render_field(form.last_name)}}
         {{render_field(form.username)}}
         {{render_field(form.email)}}
         {{render_field(form.current_password)}}

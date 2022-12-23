@@ -129,6 +129,8 @@ def profile():
         is_valid = True
         email = form.email.data
         username = form.username.data
+        first_name = form.first_name.data
+        last_name = form.last_name.data
         current_password = form.current_password.data
         password = form.password.data
         confirm = form.confirm.data
@@ -157,14 +159,14 @@ def profile():
         
         if is_valid:
             try: # update email, username (this will trigger if nothing changed but it's fine)
-                result = DB.update("UPDATE IS601_Users SET email = %s, username = %s WHERE id = %s", email, username, user_id)
+                result = DB.update("UPDATE IS601_Users SET first_name = %s, last_name = %s, email = %s, username = %s WHERE id = %s", first_name, last_name, email, username, user_id)
                 if result.status:
                     flash("Saved profile", "success")
             except Exception as e:
                 check_duplicate(e)
     try:
         # get latest info if anything changed
-        result = DB.selectOne("SELECT id, email, username FROM IS601_Users where id = %s", user_id)
+        result = DB.selectOne("SELECT id, email, first_name, last_name, username FROM IS601_Users where id = %s", user_id)
         if result.status and result.row:
             user = User(**result.row)
             # switch how user is loaded so we don't lose error validations
@@ -172,6 +174,8 @@ def profile():
             print("loading user", user)
             form.username.data = user.username
             form.email.data = user.email
+            form.first_name.data = user.first_name
+            form.last_name.data = user.last_name
             # TODO update session
             current_user.email = user.email
             current_user.username = user.username

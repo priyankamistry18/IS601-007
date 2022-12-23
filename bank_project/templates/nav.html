@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img height="32" src="https://png.pngtree.com/element_our/png/20181114/bank-icon-png_239804.jpg" alt="">
-            Sample_Bank
+            Sample Bank
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -41,6 +41,16 @@
                 ] %}
                 {{dropdown_nav("Roles", roles)}}
                 {% endif %}
+                <!-- accounts nav -->
+                {% set accounts = [
+                    ("accounts.create", "Create"),
+                    ("accounts.list", "List"),
+                    ("accounts.deposit", "Deposit"),
+                    ("accounts.withdraw", "Withdraw"),
+                    ("accounts.transfer", "Transfer"),
+                    ("accounts.ext_transfer", "Ext Transfer"),
+                    ] %}
+                    {{dropdown_nav("Accounts", accounts)}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{url_for('auth.logout')}}">Logout</a>
                 </li>

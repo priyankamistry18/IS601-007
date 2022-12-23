@@ -47,6 +47,8 @@ class LoginForm(AuthForm):
         return True
                 
 class ProfileForm(AuthForm):
+    first_name = StringField("first_name", validators=[Optional()])
+    last_name = StringField("last_name", validators=[Optional()])
     current_password = PasswordField("current password", validators=[Optional()])
     # https://wtforms.readthedocs.io/en/3.0.x/forms/#form-inheritance
     def __init__(self, *args, **kwargs):

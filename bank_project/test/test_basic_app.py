@@ -26,4 +26,3 @@ def client(app):
 def runner(app):
     return app.test_cli_runner()
 
-

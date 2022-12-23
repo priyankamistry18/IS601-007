@@ -31,7 +31,7 @@ class DB:
        
         try:
             db = DB.getDB()
-            cursor = db.cursor(dictionary=True)
+            cursor = db.cursor(buffered=True,dictionary=True)
             status = False
             if not isMany or op == CRUD.READ:
                 if args is not None and len(args) > 0:

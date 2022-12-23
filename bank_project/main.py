@@ -44,9 +44,20 @@ def create_app(config_filename=''):
         app.register_blueprint(auth)
         from roles.roles import roles
         app.register_blueprint(roles)
+        from accounts.accounts import accounts
+        app.register_blueprint(accounts)
 
         # load the extension
         principals = Principal(app) # must be defined/initialized for identity to work (flask_principal)
+        
+        @app.before_first_request
+        def preload_data():
+            """
+            Verify that a system_admin user and associated world account exists.
+            If not, create both records.
+            """
+            print("preloaded data")
+
         @login_manager.user_loader
         def load_user(user_id):
             if user_id is None:
