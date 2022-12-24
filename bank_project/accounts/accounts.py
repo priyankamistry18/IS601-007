@@ -258,33 +258,26 @@ def ext_transfer():
             flash("Amount being transferred exceeds balance!", "danger")
             return render_template("ext_transfer_form.html", form=form)
 
-        dest_user_accounts = DB.selectAll("SELECT id, account_number, user_id FROM IS601_Accounts WHERE RIGHT(account_number,4) LIKE %s LIMIT 1", form.account_dest.data)
-        if dest_user_accounts.status and dest_user_accounts.rows:
+        dest_user_account = DB.selectOne("SELECT id, account_number, user_id FROM IS601_Accounts WHERE RIGHT(account_number,4) LIKE %s LIMIT 1", form.account_dest.data)
+        if dest_user_account.status and dest_user_account.row:
             try:
-                dest_user_accounts_rows = dest_user_accounts.rows
+                dest_user_id = dest_user_account.row['user_id']
             except:
                 flash("User account not found!", "danger")
                 return render_template("ext_transfer_form.html", form=form)
 
-        dest_user_id = None
-        dest_user_account = None
-        dest_account_id = None
-
-        for dest_user_accounts_row in dest_user_accounts_rows:
-            dest_user_id = dest_user_accounts_row['user_id']
-            dest_account_id = dest_user_accounts_row['id']
-            dest_user_account = dest_user_accounts_row
-            dest_user = DB.selectOne("SELECT id FROM IS601_Users WHERE last_name LIKE %s AND id=%s LIMIT 1", form.last_name.data, dest_user_id)
-            try:
-                dest_user.row['id']
-                break
-            except:
-                flash("User account not found!", "danger")
-                return render_template("ext_transfer_form.html", form=form)
+        dest_user = DB.selectOne("SELECT id FROM IS601_Users WHERE last_name LIKE %s AND id=%s LIMIT 1", form.last_name.data, dest_user_id)
+        try:
+            dest_user.row['id']
+        except:
+            flash("User account not found!", "danger")
+            return render_template("ext_transfer_form.html", form=form)
 
         if dest_user_id == user_id:
             flash("Transfer should be external", "danger")
             return render_template("transfer_form.html", form=form)
+
+        dest_account_id = dest_user_account.row['id']
 
         trans1 = DB.insertOne("INSERT INTO IS601_Transactions (account_src, account_dest, balance_change, expected_total, transaction_type, memo) VALUES (%s, %s, %s, %s, %s, %s)",
         form.account_src.data, dest_account_id, form.funds.data*-1, src_expected_total, "Ext-Transfer", form.memo.data)
@@ -298,7 +291,7 @@ def ext_transfer():
         refresh_account(form.account_src.data)
 
         form = ExtTransferForm(accounts=rows)
-        flash(f"Transferred ${form.funds.data} from to {form.last_name.data} - account number {dest_user_account['account_number']}", "success")
+        flash(f"Transferred ${form.funds.data} from to {form.last_name.data} - account number {dest_user_account.row['account_number']}", "success")
 
 
     return render_template("ext_transfer_form.html", form=form)
