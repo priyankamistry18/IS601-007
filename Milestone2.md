@@ -1,6 +1,6 @@
 <table><tr><td> <em>Assignment: </em> IS601 Milestone 2 Bank Project</td></tr>
 <tr><td> <em>Student: </em> Priyanka Mistry (pm582)</td></tr>
-<tr><td> <em>Generated: </em> 12/23/2022 7:14:33 PM</td></tr>
+<tr><td> <em>Generated: </em> 12/23/2022 7:18:02 PM</td></tr>
 <tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IS601-007-F22/is601-milestone-2-bank-project/grade/pm582" target="_blank">Grading</a></td></tr></table>
 <table><tr><td> <em>Instructions: </em> <ol><li>Checkout Milestone2 branch</li><li>Create a new markdown file called milestone2.md</li><li>git add/commit/push immediate</li><li>Fill in the below deliverables</li><li>At the end copy the markdown and paste it into milestone2.md</li><li>Add/commit/push the changes to Milestone2</li><li>PR Milestone2 to dev and verify</li><li>PR dev to prod and verify</li><li>Checkout dev locally and pull changes to get ready for Milestone 3</li><li>Submit the direct link to this new milestone2.md file from your GitHub prod branch to Canvas</li></ol><p>Note: Ensure all images appear properly on github and everywhere else. Images are only accepted from dev or prod, not local host. All website links must be from prod (you can assume/infer this by getting your dev URL and changing dev to prod).</p></td></tr></table>
 <table><tr><td> <em>Deliverable 1: </em> Create Accounts table and setup </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
@@ -82,7 +82,7 @@
 <tr><td> <em>Sub-Task 4: </em> Add a direct link to heroku prod for this file</td></tr>
 <tr><td> <a rel="noreferrer noopener" target="_blank" href="https://is601-project-prod3.herokuapp.com/accounts/deposit">https://is601-project-prod3.herokuapp.com/accounts/deposit</a> </td></tr>
 </table></td></tr>
-<table><tr><td> <em>Deliverable 6: </em> Deposit/Withdraw </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/f2c037/000000?text=Partial"></td></tr>
+<table><tr><td> <em>Deliverable 6: </em> Deposit/Withdraw </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="http://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Show a Screenshot of the Deposit Page</td></tr>
 <tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/209414519-602b012c-eb3a-450d-bb11-3d0a28e881b0.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Deposit Page<br></p>
@@ -99,7 +99,7 @@
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 4: </em> Show validation error for withdrawing more than the account contains</td></tr>
-<tr><td><table><tr><td>Missing Image</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/60395460/209414915-f53aa9b0-8492-42b2-9865-53b22bf1d0e0.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Show validation error for withdrawing more than the account contains<br></p>
 </td></tr>
 </table></td></tr>
